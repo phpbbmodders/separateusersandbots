@@ -23,3 +23,7 @@ Go to admin panel -> tab customise -> Manage extensions -> enable Separate user 
 2. Delete all files of the extension from ext/rmcgirr83/separateusersandbots
 3. Upload all the new files to the same location
 4. Go to your phpBB-Board > Admin Control Panel > Customise > Manage extensions > Separate user and bots: enable
+
+## TODO
+
+Ideas not yet built, practical and speculative alike: [`docs/TODO.md`](docs/TODO.md).
