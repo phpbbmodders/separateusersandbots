@@ -17,6 +17,7 @@ use phpbb\auth\auth;
 use phpbb\config\config;
 use phpbb\language\language;
 use phpbb\template\template;
+use rmcgirr83\hidebots\event\listener as hidebots;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -37,7 +38,7 @@ class listener implements EventSubscriberInterface
 	/** @var $template */
 	protected $template;
 
-	/** @var $hidebots */
+	/** @var hidebots|null */
 	private $hidebots;
 
 	/** @var string bots online */
@@ -50,7 +51,7 @@ class listener implements EventSubscriberInterface
 	* @param config             $config         Config object
 	* @param language			$language		Language object
 	* @param template           $template       Template object
-	* @param hidebots			$hidebots
+	* @param hidebots|null		$hidebots		The Hide Bots listener, when that extension is enabled
 	* @access public
 	*/
 	public function __construct(
@@ -58,7 +59,7 @@ class listener implements EventSubscriberInterface
 		config $config,
 		language $language,
 		template $template,
-		hidebots $hidebots = null)
+		hidebots|null $hidebots = null)
 	{
 		$this->auth 	= $auth;
 		$this->config 	= $config;
